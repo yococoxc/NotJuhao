@@ -1,0 +1,59 @@
+//
+//  Common.pch
+//  juhao
+//
+//  Created by muzico on 2018/11/30.
+//  Copyright © 2018 muzico. All rights reserved.
+//
+
+#ifndef Common_pch
+#define Common_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#import "Masonry.h"
+
+#import "LQSKit.h"
+#import "CommonNavigationView.h"
+
+
+
+
+#define __LQSBoxCreate(viewController) ([LQSBoxController createWithBody:viewController])
+#define LQSBoxCreate(viewController) __LQSBoxCreate(viewController)
+
+
+#define __LQSBoxCreateWithTitle(viewController, title) ([LQSBoxController createWithBody:viewController head:[CommonNavigationView viewWithTitle:title] headHeight:44])
+#define LQSBoxCreateWithTitle(viewController, title) __LQSBoxCreateWithTitle(viewController, title)
+
+#define __LQSBoxCreateWithBackAndTitle(viewController, title) ([LQSBoxController createWithBody:viewController head:[CommonNavigationView viewWithBackAndTitle:title] headHeight:44])
+#define LQSBoxCreateWithBackAndTitle(viewController, title) __LQSBoxCreateWithBackAndTitle(viewController, title)
+
+#define WeakSelf \
+__weak typeof(self) weakSelf = self;
+
+#define CurrentViewController(vc,weakSelf) \
+LQSBoxController *boxController = LQSBoxCreate(vc);\
+UIViewController *currentVC = [weakSelf lqs_currentViewControllerWithClass:[LQSBoxController class]];\
+[currentVC lqs_currentNavigationControllerPushViewController:boxController];
+
+#define CurrentViewControllerTitle(vc,weakSelf,title) \
+LQSBoxController *boxController = LQSBoxCreateWithTitle(vc, title);\
+UIViewController *currentVC = [weakSelf lqs_currentViewControllerWithClass:[LQSBoxController class]];\
+[currentVC lqs_currentNavigationControllerPushViewController:boxController];
+
+#define CurrentViewControllerTitle(vc,weakSelf,title) \
+LQSBoxController *boxController = LQSBoxCreateWithTitle(vc, title);\
+UIViewController *currentVC = [weakSelf lqs_currentViewControllerWithClass:[LQSBoxController class]];\
+[currentVC lqs_currentNavigationControllerPushViewController:boxController];
+
+#define CurrentViewControllerBackAndTitle(vc,weakSelf,title) \
+LQSBoxController *boxController = LQSBoxCreateWithBackAndTitle(vc, title);\
+UIViewController *currentVC = [weakSelf lqs_currentViewControllerWithClass:[LQSBoxController class]];\
+[currentVC lqs_currentNavigationControllerPushViewController:boxController];
+
+
+
+#endif /* Common_pch */
+

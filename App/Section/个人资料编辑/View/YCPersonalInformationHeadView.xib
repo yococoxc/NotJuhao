@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YCPersonalInformationHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="384"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wc0-Lf-RWs">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="384"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的头部.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2w0-B5-IEg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="384"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2g-64-IWH">
+                            <rect key="frame" x="148" y="152" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="KKC-ok-B59"/>
+                                <constraint firstAttribute="width" constant="80" id="qSv-kK-SaY"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="默认头像.png"/>
+                            <connections>
+                                <action selector="pressedButtonToAvatar:" destination="iN0-l3-epB" eventType="touchUpInside" id="2uT-GC-pX3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="R2g-64-IWH" firstAttribute="centerX" secondItem="wc0-Lf-RWs" secondAttribute="centerX" id="7qg-2h-8jb"/>
+                        <constraint firstAttribute="trailing" secondItem="2w0-B5-IEg" secondAttribute="trailing" id="7vr-7E-afs"/>
+                        <constraint firstItem="2w0-B5-IEg" firstAttribute="top" secondItem="wc0-Lf-RWs" secondAttribute="top" id="Ebg-nf-LL4"/>
+                        <constraint firstAttribute="bottom" secondItem="2w0-B5-IEg" secondAttribute="bottom" id="d3Z-qa-53y"/>
+                        <constraint firstItem="2w0-B5-IEg" firstAttribute="leading" secondItem="wc0-Lf-RWs" secondAttribute="leading" id="l0L-h7-urw"/>
+                        <constraint firstItem="R2g-64-IWH" firstAttribute="centerY" secondItem="wc0-Lf-RWs" secondAttribute="centerY" id="tKP-3o-HDw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wc0-Lf-RWs" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="E9s-nN-0ZV"/>
+                <constraint firstItem="wc0-Lf-RWs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HwJ-VM-Czt"/>
+                <constraint firstItem="wc0-Lf-RWs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LIG-Nm-KFS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wc0-Lf-RWs" secondAttribute="bottom" id="Lqf-Iz-A1p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatarButton" destination="R2g-64-IWH" id="VH4-bL-p6h"/>
+            </connections>
+            <point key="canvasLocation" x="41.5" y="201"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="我的头部.jpg" width="320" height="150"/>
+        <image name="默认头像.png" width="200" height="200"/>
+    </resources>
+</document>
